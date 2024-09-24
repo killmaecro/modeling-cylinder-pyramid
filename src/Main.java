@@ -21,6 +21,7 @@ public class Main {
 		double volume = ModelingCylinder.getPyramidVolume(radius, height);
 		
 		// Printing the total volume and my name to the console
-		System.out.printf("The total volume of the cylinder pyramid is %.3f units cubed. \n%s", volume, "Program by: Joshua MacPherson");
+		System.out.printf("The total volume of the cylinder pyramid is %.3f units cubed. \n%s", volume,
+				"Program by: Joshua MacPherson");
 	}
 }

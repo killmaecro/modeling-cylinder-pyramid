@@ -1,9 +1,12 @@
 // Importing Scanner from Java utilities
 import java.util.Scanner;
 
-/** Description: This class is to get the user input, and filter out any inputs that are not valid **/
+/**
+ * Description: This class is to get the user input
+ */
 public class GetInput {
-	
+
+	// Method to retrieve user input and filter out invalid inputs (strings)
 	public static double getInput(String message) {
 
 		// Create scanner
@@ -16,7 +19,7 @@ public class GetInput {
 		while (!reader.hasNextDouble()) {
 			System.out.println("Please enter a valid input.");
 
-			// Tells the scanner to move on so it doesn't get stuck on the invalid input resulting in an infinite loop
+			// Get rid of input so it doesn't loop infinitely
 			reader.next();
 		}
 
