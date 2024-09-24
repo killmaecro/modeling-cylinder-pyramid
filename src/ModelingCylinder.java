@@ -8,16 +8,16 @@ public class ModelingCylinder {
 		double constant = .8;
 
 		// Calculating base cylinder volume
-		double volumeBottom = getCylinderVolume(radius, height);
+		double volume = getCylinderVolume(radius, height);
 
 		// 2nd cylinder radius is initial radius * .8
-		double volumeMiddle = getCylinderVolume(radius * constant, height);
+		volume += getCylinderVolume(radius * constant, height);
 
 		// 3rd cylinder radius is initial radius * (.8 * .8) which is (.64)
-		double volumeTop = getCylinderVolume(radius * constant * constant, height);
+		volume += getCylinderVolume(radius * constant * constant, height);
 
 		// Returning the result to Main
-		return volumeBottom + volumeMiddle + volumeTop;
+		return volume;
 	}
 
 	/* Method that takes in radius and height arguments and puts them in the formula
