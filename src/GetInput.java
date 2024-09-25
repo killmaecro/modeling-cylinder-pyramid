@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class GetInput {
 
 	// Method to retrieve user input and filter out invalid inputs (strings)
-	public static double getInput(String message) {
+	public static double getArgs(String message) {
 
 		// Create scanner
 		Scanner reader = new Scanner(System.in);
