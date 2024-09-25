@@ -3,36 +3,27 @@
  */
 public class ModelingCylinder {
 
-	// Method to extract the output from calculateOneCylinder and add up the volumes to return the final result to Main
-    static double getPyramidVolume(double radius, double height) {
-
-		double constant = .8;
-
-		// Calculating base cylinder volume
-		double volume = getCylinderVolume(radius, height);
-
-		// 2nd cylinder radius is initial radius * .8
-		volume += getCylinderVolume(radius * constant, height);
-
-		// 3rd cylinder radius is initial radius * (.8 * .8) which is (.64)
-		volume += getCylinderVolume(radius * constant * constant, height);
-
-		// Returning the result to Main
-		return volume;
-	}
-
 	/*
-	 * Method that takes in radius and height arguments and puts them in the formula
+	 * Method that takes in radius and height arguments and does the calculations
 	 * This method uses the cylinder volume formula from calculator.net
 	 * Reference:
 	 * Volume Calculator calculator.net
 	 * https://www.calculator.net/volume-calculator.html (Accessed September 12, 2024)
 	 */
-	private static double getCylinderVolume (double radius, double height) {
+	static double getPyramidVolume(double radius, double height) {
 
-		// Return the result from the formula to the math method
-		return height * Math.PI * Math.pow(radius, 2);
+		double constant = .8;
+
+		// Calculating base cylinder volume
+		double volume = height * Math.PI * Math.pow(radius, 2);
+
+		// 2nd cylinder radius is initial radius * .8
+		volume += height * Math.PI * Math.pow(radius * constant, 2);
+
+		// 3rd cylinder radius is initial radius * (.8 * .8) which is (.64)
+		volume += height * Math.PI * Math.pow(radius * constant * constant, 2);
+
+		// Returning the result to Main
+		return volume;
 	}
-
-
 }	
