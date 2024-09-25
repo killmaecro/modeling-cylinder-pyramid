@@ -12,21 +12,33 @@ public class Main {
 	// Main entry point to the program
 	public static void main(String[] args) {
 
+		// Creating a new pyramid object
+		ModelingCylinder pyramid = new ModelingCylinder();
+
 		Scanner reader = new Scanner(System.in);
 
-		// Ask user for the radius of the cylinder
-		System.out.println("Enter the radius of the cylinder: ");
-		double radius = reader.nextDouble();
+		boolean satisfied = false;
 
-		// Ask user for the height of the cylinder
-		System.out.println("Enter the height of the cylinder: ");
-		double height = reader.nextDouble();
+		while (!satisfied) {
+			// Ask user for the radius of the cylinder
+			pyramid.setRadius(GetInput.getArgs("Enter the radius of the cylinder: "));
+			System.out.println("You entered: " + pyramid.getRadius());
 
-		// Creating a variable that stores the output from ModelingCylinder
-		double volume = ModelingCylinder.getPyramidVolume(radius, height);
+			// Ask user for the height of the cylinder
+			pyramid.setHeight(GetInput.getArgs("Enter the height of the cylinder: "));
+			System.out.println("You entered: " + pyramid.getHeight());
 
-		// Printing the total volume and my name to the console
-		System.out.printf("The total volume of the cylinder pyramid is %.3f units cubed. \n%s", volume,
-				"Program by: Joshua MacPherson");
+			System.out.println("Are you satisfied with these numbers? Type yes if so.");
+			String answer = reader.next();
+
+			if (answer.equalsIgnoreCase("yes")) {
+				satisfied = true;
+			}
+		}
+
+		reader.close();
+
+		// Displaying result
+		pyramid.displayResult();
 	}
 }
