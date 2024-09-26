@@ -31,10 +31,12 @@ public class Main {
 			// Storing the answer and converting it to lowercase so any capitalization of yes works
 			String answer = GetInput.isSatisfied("Are you satisfied with these numbers? (yes/no)").toLowerCase();
 
+			//
 			if (answer.equals("yes")) {
 				satisfied = true;
 			}
 		}
+
 		// Displaying result
 		pyramid.displayResult();
 	}
