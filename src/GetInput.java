@@ -6,11 +6,11 @@ import java.util.Scanner;
  */
 public class GetInput {
 
-	// Method to retrieve user input and filter out invalid inputs (strings)
-	public static double getArgs(String message) {
+	// Create scanner
+	static Scanner reader = new Scanner(System.in);
 
-		// Create scanner
-		Scanner reader = new Scanner(System.in);
+	// Method to retrieve user input and filter out invalid inputs (strings)
+	public static double getDouble(String message) {
 		
 		// Print message to console
 		System.out.println(message);
@@ -25,5 +25,22 @@ public class GetInput {
 
 		// If the input passes the loop's conditions, return the input
 		return reader.nextDouble();
+	}
+
+	public static String isSatisfied(String message) {
+
+		// Print message to console
+		System.out.println(message);
+
+		String input = reader.next();
+
+		// As long as the input is not a double, this will run and ask you to enter a valid input
+		while (!input.equalsIgnoreCase("yes") && !input.equalsIgnoreCase("no")) {
+			System.out.println("Please enter yes or no.");
+			input = reader.next();
+
+		}
+
+		return input;
 	}
 }

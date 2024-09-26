@@ -6,7 +6,6 @@
  * Description: Program that, when given the height and radius of a cylinder,
  * calculates a cylinder pyramid's total volume.
  **/
-import java.util.Scanner;
 public class Main {
 
 	// Main entry point to the program
@@ -15,29 +14,27 @@ public class Main {
 		// Creating a new pyramid object
 		ModelingCylinder pyramid = new ModelingCylinder();
 
-		Scanner reader = new Scanner(System.in);
-
+		// Boolean to break out of the loop
 		boolean satisfied = false;
 
+		// Loop to catch errors and allow user to make changes in case they make a typo
 		while (!satisfied) {
+
 			// Ask user for the radius of the cylinder
-			pyramid.setRadius(GetInput.getArgs("Enter the radius of the cylinder: "));
+			pyramid.setRadius(GetInput.getDouble("Enter the radius of the cylinder: "));
 			System.out.println("You entered: " + pyramid.getRadius());
 
 			// Ask user for the height of the cylinder
-			pyramid.setHeight(GetInput.getArgs("Enter the height of the cylinder: "));
+			pyramid.setHeight(GetInput.getDouble("Enter the height of the cylinder: "));
 			System.out.println("You entered: " + pyramid.getHeight());
 
-			System.out.println("Are you satisfied with these numbers? Type yes if so.");
-			String answer = reader.next();
+			// Storing the answer and converting it to lowercase so any capitalization of yes works
+			String answer = GetInput.isSatisfied("Are you satisfied with these numbers? (yes/no)").toLowerCase();
 
-			if (answer.equalsIgnoreCase("yes")) {
+			if (answer.equals("yes")) {
 				satisfied = true;
 			}
 		}
-
-		reader.close();
-
 		// Displaying result
 		pyramid.displayResult();
 	}
