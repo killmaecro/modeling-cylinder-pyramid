@@ -6,11 +6,6 @@ public class ModelingPyramid {
 	private double radius;
 	private double height;
 
-	// Constructor method
-	public ModelingPyramid() {
-
-	}
-
 	// Getter method for radius
 	public double getRadius() {
 		return radius;

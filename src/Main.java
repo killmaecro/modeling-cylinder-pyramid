@@ -11,6 +11,7 @@ public class Main {
 	// Main entry point to the program
 	public static void main(String[] args) {
 
+		// Creating new scanner
 		Scanner kbd = new Scanner(System.in);
 
 		// Creating a new pyramid object
